@@ -1,0 +1,3669 @@
+<head>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+<style>
+#mapid { height: 100%;}
+
+</style>
+</head>
+
+<body>
+ <div id="mapid"></div>
+
+
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+
+<script>
+var mymap = L.map('mapid').setView([39.97502830072596, -82.99419264583108], 13);
+
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiamN1bmRlcndvb2QiLCJhIjoiY2ttaTAxYTVlMGNmbzJ2a2RmNzFmdHJmaiJ9._HoDiXkxBJwEnUUEwbxQ0w'
+}).addTo(mymap);
+
+
+var geojsonFeature = [{
+  geometry: {
+    coordinates: [-82.970887, 40.121348],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.898049, 39.995048],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 434
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.203093, 40.093426],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 325
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.19567, 40.079454],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 458
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.007725, 39.91964],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 468
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.037278, 40.079077],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 555
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.994648, 39.999016],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 530
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.033248, 40.018329],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 597
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.121839, 40.174699],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 503
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.039131, 39.991276],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 88,
+    timeInBed: 490
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.981652, 39.992702],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 449
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.106361, 39.984006],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 440
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.958928, 39.906926],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 435
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.933421, 40.094147],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 88,
+    timeInBed: 499
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.964206, 40.089111],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 440
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.002294, 39.95189],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 445
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.091624, 40.088579],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 453
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.901165, 39.935445],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 446
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.125489, 39.969922],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 515
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.169003, 39.973273],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 470
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.120023, 39.95388],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 91,
+    timeInBed: 520
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.94061, 40.005133],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 421
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.98394, 39.935752],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 476
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.98644, 40.130751],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 66,
+    timeInBed: 453
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.910864, 40.166326],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 38,
+    timeInBed: 330
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.024807, 40.155552],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 465
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.139688, 39.933922],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 438
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.006222, 39.930762],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 432
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.168649, 40.071654],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 531
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.009695, 40.154066],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 459
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.978525, 39.980148],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 508
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.040458, 39.922579],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 499
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.197622, 40.171442],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 94,
+    timeInBed: 486
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.195726, 40.02089],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 88,
+    timeInBed: 464
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.139751, 40.060355],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 380
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.915921, 40.048933],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 497
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.960496, 39.976549],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 445
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.098093, 40.103535],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 506
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.18347, 40.014812],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 388
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.937459, 39.929728],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 95,
+    timeInBed: 486
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.049974, 40.088873],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 496
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.901215, 39.949682],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 98,
+    timeInBed: 491
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.995427, 39.944387],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 431
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.019609, 39.916321],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.108322, 40.133329],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 91,
+    timeInBed: 524
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.153074, 39.944103],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 429
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.045786, 40.01357],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 478
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.911135, 40.058848],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 377
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.121381, 40.148291],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 427
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.895102, 40.00406],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 413
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.062637, 40.009997],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 449
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.130391, 39.93182],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 463
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.007469, 40.128533],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 519
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.174294, 39.926974],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 98,
+    timeInBed: 502
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.031684, 40.060948],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 570
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.053401, 39.904834],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 553
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.922177, 39.918654],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 534
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.160577, 39.935916],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 536
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.908735, 39.909031],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 433
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.973069, 40.137459],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.968759, 39.968339],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 416
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.944755, 40.087292],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 66,
+    timeInBed: 433
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.154254, 40.141605],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 58,
+    timeInBed: 446
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.193094, 40.046992],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 462
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.970193, 40.147853],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 86,
+    timeInBed: 587
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.994022, 40.027696],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 519
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.993468, 39.909631],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 62,
+    timeInBed: 545
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.893134, 40.163114],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 551
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.17347, 39.949666],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 73,
+    timeInBed: 415
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.071866, 40.132052],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.070917, 40.041661],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 53,
+    timeInBed: 390
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.1122, 40.126796],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 94,
+    timeInBed: 540
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.0064, 40.056084],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 432
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.961157, 40.139938],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 439
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.129687, 40.138485],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 453
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.946777, 40.099363],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 465
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.964635, 39.939364],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 94,
+    timeInBed: 521
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.970525, 40.003752],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 527
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.190987, 39.93396],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 532
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.919814, 40.159084],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 539
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.204105, 40.030621],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.128566, 40.176761],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 460
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.939151, 40.168384],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 9,
+    timeInBed: 42
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.022352, 40.148972],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 427
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.052462, 39.917573],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 463
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.024591, 39.925656],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 451
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.007593, 40.076378],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.977885, 40.149498],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.091132, 39.988278],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 95,
+    timeInBed: 473
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.888524, 40.020611],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 429
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.110098, 39.961497],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 95,
+    timeInBed: 527
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.016196, 39.955451],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 509
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.918972, 40.099195],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.069709, 40.03477],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 493
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.959056, 39.919316],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 474
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.934715, 39.94502],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.885481, 40.144229],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 93,
+    timeInBed: 471
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.045568, 39.911536],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 396
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.065968, 40.174759],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 450
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.116578, 39.924029],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 380
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.128754, 40.002821],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 461
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.058688, 40.174388],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 419
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.166882, 40.161297],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 100,
+    timeInBed: 525
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.018848, 39.947815],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 513
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.008101, 39.913781],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 520
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.096815, 39.987856],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 556
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.160585, 40.053317],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 434
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.171946, 39.922143],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 390
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.019884, 40.176322],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 91,
+    timeInBed: 499
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.977146, 40.117704],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 415
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.914508, 40.096325],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 455
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.909324, 39.945668],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 88,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.066391, 40.120775],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 491
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.015758, 39.927007],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 416
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.175366, 40.059019],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 100,
+    timeInBed: 516
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.045129, 40.015975],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.155697, 40.107406],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 448
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.156657, 39.914587],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 406
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.026901, 40.110863],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 399
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.065059, 39.932393],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 438
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.106673, 40.092914],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 365
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.897581, 40.139276],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 419
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.946933, 40.064119],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 500
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.198749, 40.010645],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 507
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.094211, 40.171404],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 93,
+    timeInBed: 598
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.932324, 40.125414],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 459
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.145832, 40.037301],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 502
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.943816, 39.997964],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 478
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.11888, 40.092884],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 338
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.170027, 39.978133],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 474
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.115201, 40.117665],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 474
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.095895, 40.103037],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 419
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.20467, 39.976524],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 435
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.170667, 39.904059],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 449
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.202915, 40.01009],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 461
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.939309, 39.919686],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 86,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.942493, 40.081836],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 494
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.022155, 40.070005],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 62,
+    timeInBed: 418
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.956388, 40.144472],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 445
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.042462, 40.060525],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 443
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.999027, 40.091091],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.97265, 40.146166],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 86,
+    timeInBed: 492
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.922677, 40.013834],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 491
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.099383, 39.976773],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 436
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.083821, 40.167007],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 482
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.064144, 39.932009],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 96,
+    timeInBed: 492
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.132703, 40.063289],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 479
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.980338, 40.011067],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 99,
+    timeInBed: 530
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.040762, 40.170369],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 96,
+    timeInBed: 493
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.084368, 40.116103],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 422
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.122087, 40.03212],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 455
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.082058, 39.929566],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 467
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.008698, 40.170256],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 98,
+    timeInBed: 490
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.182659, 40.034209],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 457
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.946314, 39.910769],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 428
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.172985, 40.174134],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 77,
+    timeInBed: 434
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.91556, 40.140486],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 450
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.010418, 40.006755],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 472
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.202719, 40.021518],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 99,
+    timeInBed: 575
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.128365, 39.961714],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.907507, 39.919949],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 448
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.075735, 40.006281],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 86,
+    timeInBed: 487
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.936117, 39.941631],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 427
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.152684, 39.980362],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 95,
+    timeInBed: 501
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.193622, 40.178662],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 35,
+    timeInBed: 310
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.993526, 40.139528],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 96,
+    timeInBed: 464
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.033639, 40.043668],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 453
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.179553, 40.09735],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 36,
+    timeInBed: 504
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.933941, 40.095415],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 56,
+    timeInBed: 628
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.935363, 40.12417],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 52,
+    timeInBed: 491
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.96595, 39.90995],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 35,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.952034, 40.130014],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 51,
+    timeInBed: 450
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.110906, 40.152734],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 54,
+    timeInBed: 499
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.971694, 39.923058],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 55,
+    timeInBed: 493
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.02128, 40.125595],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 46,
+    timeInBed: 457
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.199746, 39.956696],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 48,
+    timeInBed: 513
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.129725, 40.0471],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 36,
+    timeInBed: 468
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.978736, 40.105571],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 40,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.921967, 39.916922],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 49,
+    timeInBed: 479
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.023001, 40.016412],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 49,
+    timeInBed: 467
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.072658, 40.150067],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 54,
+    timeInBed: 410
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.155709, 40.150628],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 549
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.101832, 40.145159],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 61,
+    timeInBed: 512
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.179317, 40.047895],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 41,
+    timeInBed: 560
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.057342, 39.911725],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 490
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.883129, 39.916877],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 470
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.884352, 40.025533],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 61,
+    timeInBed: 461
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.157061, 40.156306],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 58,
+    timeInBed: 381
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.020293, 40.171154],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 33,
+    timeInBed: 437
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.988072, 39.972528],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 60,
+    timeInBed: 434
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.060175, 39.940359],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 454
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.20556, 40.178733],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 59,
+    timeInBed: 492
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.085401, 39.924664],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 473
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.162789, 40.145156],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 596
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.910387, 40.085552],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 57,
+    timeInBed: 475
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.122105, 40.044652],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 60,
+    timeInBed: 487
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.005733, 40.000767],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 57,
+    timeInBed: 456
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.937984, 40.001204],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 60,
+    timeInBed: 479
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.081861, 39.94984],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 509
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.148534, 39.912812],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 58,
+    timeInBed: 451
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.100312, 39.92168],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 55,
+    timeInBed: 483
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.193982, 39.942462],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 55,
+    timeInBed: 464
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.108325, 40.005333],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 60,
+    timeInBed: 429
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.908832, 39.905433],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 53,
+    timeInBed: 449
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.077535, 40.01216],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 500
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.948926, 39.963244],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 55,
+    timeInBed: 506
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.165053, 39.992369],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 54,
+    timeInBed: 416
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.033138, 40.046344],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 62,
+    timeInBed: 458
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.945093, 40.149141],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 66,
+    timeInBed: 508
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.904049, 39.923001],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 54,
+    timeInBed: 468
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.139439, 40.0663],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 52,
+    timeInBed: 393
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.961844, 39.916606],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 482
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.054823, 40.031353],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 59,
+    timeInBed: 469
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.934518, 39.96362],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 56,
+    timeInBed: 465
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.096788, 40.180171],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 436
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.086226, 39.938859],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 61,
+    timeInBed: 484
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.164054, 40.164747],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 510
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.972496, 40.168736],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 50,
+    timeInBed: 447
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.052134, 39.990151],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 63,
+    timeInBed: 454
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.966655, 39.904218],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 455
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.948146, 39.985179],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 455
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.992767, 39.964019],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 67,
+    timeInBed: 499
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.207071, 39.99703],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 54,
+    timeInBed: 339
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.979888, 40.050321],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 520
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.097022, 40.170382],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 66,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.974997, 40.078438],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 441
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.086934, 40.127664],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 466
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.977002, 40.090369],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 450
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.045937, 40.152324],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 63,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.920979, 39.927292],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 66,
+    timeInBed: 454
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.992647, 39.948104],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 443
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.96976, 40.168326],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 457
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.00286, 39.984443],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 458
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.955115, 40.019571],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 52,
+    timeInBed: 361
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.050329, 39.918797],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 548
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.143028, 40.031269],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 469
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.961461, 40.104693],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 455
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.93674, 40.16608],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 62,
+    timeInBed: 416
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.982739, 39.916393],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 437
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.907113, 39.988862],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 56,
+    timeInBed: 440
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.156858, 39.995234],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 471
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.199817, 40.158993],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 560
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.113789, 39.965866],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 476
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.124893, 39.939959],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 73,
+    timeInBed: 464
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.03985, 39.921772],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 70,
+    timeInBed: 456
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.959021, 39.998731],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 485
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.18048, 40.049802],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.896628, 39.968026],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 68,
+    timeInBed: 421
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.952667, 40.119779],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 80,
+    timeInBed: 493
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.078907, 40.181352],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 73,
+    timeInBed: 445
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.930843, 40.164032],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 88,
+    timeInBed: 519
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.122791, 40.027353],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 510
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.168394, 40.083408],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 496
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.950726, 40.07147],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 470
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.882019, 40.144331],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 417
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.053887, 40.095532],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.039581, 39.92014],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 17,
+    timeInBed: 84
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.016305, 40.136371],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 451
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.103667, 39.947927],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 482
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.197748, 40.085409],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.921851, 40.135305],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 475
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.032992, 39.931414],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 72,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.050704, 39.978082],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.083757, 39.995229],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 435
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.033989, 40.160511],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 563
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.111476, 39.931982],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 82,
+    timeInBed: 439
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.133295, 40.135695],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 85,
+    timeInBed: 481
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.087111, 40.042236],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 81,
+    timeInBed: 458
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.93341, 40.119302],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 83,
+    timeInBed: 482
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.008358, 39.970931],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 500
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.92669, 40.139949],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 75,
+    timeInBed: 451
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.978152, 39.950433],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 431
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.104377, 40.022436],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 96,
+    timeInBed: 526
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.057089, 39.972577],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 440
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.954883, 39.960924],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 86,
+    timeInBed: 453
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.889179, 40.136933],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 480
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.196885, 39.939985],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 69,
+    timeInBed: 485
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.107447, 40.016041],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 540
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.142695, 39.964104],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 73,
+    timeInBed: 394
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.207316, 40.138989],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 17,
+    timeInBed: 79
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.894511, 40.096324],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.118334, 39.914],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 87,
+    timeInBed: 449
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.128007, 40.014477],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 93,
+    timeInBed: 482
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.189257, 40.047663],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 90,
+    timeInBed: 569
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.173792, 40.084953],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 79,
+    timeInBed: 442
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.97597, 39.984035],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 496
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.99829, 39.966576],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 65,
+    timeInBed: 477
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.985587, 40.104085],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 84,
+    timeInBed: 474
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.076152, 40.180419],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 73,
+    timeInBed: 427
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.923015, 40.058259],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 437
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.184807, 40.104582],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 89,
+    timeInBed: 474
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.984609, 40.042547],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 74,
+    timeInBed: 452
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.957663, 39.980841],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 71,
+    timeInBed: 432
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.902036, 40.104641],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 24,
+    timeInBed: 128
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.966671, 40.134494],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 57,
+    timeInBed: 397
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.20077, 40.152708],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 76,
+    timeInBed: 489
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.942233, 40.075603],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 92,
+    timeInBed: 495
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-82.915883, 40.031938],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 78,
+    timeInBed: 518
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.204705, 39.913326],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 96,
+    timeInBed: 509
+  },
+  type: "Feature"
+}, {
+  geometry: {
+    coordinates: [-83.001611, 40.030001],
+    type: "Point"
+  },
+  properties: {
+    heartrate: 60.6049382716,
+    pred: "-1",
+    sleepQuality: 64,
+    timeInBed: 502
+  },
+  type: "Feature"
+}];
+
+ 
+   
+/*L.geoJSON(geojsonFeature, {
+    style: {color: '#00FF7F', opacity:0.7},
+   icon: greenIcon,
+   onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h1>'+(feature.properties.pred="-1" ? "Depressed" : "Undepressed") +'</h1><p>Heartrate: '+Math.round(feature.properties.heartrate)+' BPM</p><p>Sleep quality: '+feature.properties.sleepQuality+'</p>');
+  }
+
+}).addTo(mymap);*/
+   
+   L.geoJSON(geojsonFeature, {
+  pointToLayer: function(feature, latlng) {
+     var smallIcon = new L.Icon({
+     iconSize: [60, 60],
+     iconAnchor: [13, 27],
+     popupAnchor:  [1, -24],
+     iconUrl: 'images/CIRCLE.png'
+ });
+ return L.marker(latlng, {icon: smallIcon});
+  },
+      
+      onEachFeature: function (feature, layer) {
+    layer.bindPopup('<h1>'+(feature.properties.pred="-1" ? "Depressed" : "Undepressed") +'</h1><p>Heartrate: '+Math.round(feature.properties.heartrate)+' BPM</p><p>Sleep quality: '+feature.properties.sleepQuality+'%</p><p>Time in bed: '+feature.properties.timeInBed+' minutes</p>');
+  }
+      
+}).addTo(mymap);
+
+</script>
+</body>

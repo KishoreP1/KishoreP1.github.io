@@ -1,0 +1,53 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?a5642e17ceafe0d4f7a53d6b69956403") format("truetype"),
+url("./flaticon.woff?a5642e17ceafe0d4f7a53d6b69956403") format("woff"),
+url("./flaticon.woff2?a5642e17ceafe0d4f7a53d6b69956403") format("woff2"),
+url("./flaticon.eot?a5642e17ceafe0d4f7a53d6b69956403#iefix") format("embedded-opentype"),
+url("./flaticon.svg?a5642e17ceafe0d4f7a53d6b69956403#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "context": "\f101",
+    "innovation": "\f102",
+    "map": "\f103",
+    "maps-and-flags": "\f104",
+    "mobile-app": "\f105",
+    "neural": "\f106",
+    "worldwide": "\f107",
+);
+
+.flaticon-context:before {
+    content: map-get($flaticon-map, "context");
+}
+.flaticon-innovation:before {
+    content: map-get($flaticon-map, "innovation");
+}
+.flaticon-map:before {
+    content: map-get($flaticon-map, "map");
+}
+.flaticon-maps-and-flags:before {
+    content: map-get($flaticon-map, "maps-and-flags");
+}
+.flaticon-mobile-app:before {
+    content: map-get($flaticon-map, "mobile-app");
+}
+.flaticon-neural:before {
+    content: map-get($flaticon-map, "neural");
+}
+.flaticon-worldwide:before {
+    content: map-get($flaticon-map, "worldwide");
+}
